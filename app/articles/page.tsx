@@ -1,9 +1,9 @@
 import Component from "@/components/component"
 
-export default function Works() {
+export default function Articles() {
   return (
     <Component>
-      <h1>Work page</h1>
+      <h1>Articles page</h1>
     </Component>
   )
 }
