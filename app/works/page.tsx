@@ -23,7 +23,7 @@ export default function Works() {
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={2}
         >
-          <div className="bg-gray-400 h-[100vh] w-[100vw]">
+          <div className="bg-black h-[100vh] w-[100vw]">
             <Component>
               <h1>Works page</h1>
             </Component>
