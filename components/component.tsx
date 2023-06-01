@@ -1,13 +1,19 @@
 "use client"
 
 import { usePathname, useRouter } from "next/navigation"
+import { useEffect } from "react"
 import { useDrag } from "react-use-gesture"
 
 export default function Component({ children }: any) {
   const router = useRouter()
   const pathname = usePathname()
-  const height = window.screen.height / 8
-  const width = window.screen.width / 8
+
+  let height = 0;
+  let width = 0;
+  useEffect(()=> {
+    height = window.screen.height / 8
+    width = window.screen.width / 8
+  }, [])
   const bind = useDrag(({ movement: [x, y] }) => {
     if (x > width) {
       router.push(
