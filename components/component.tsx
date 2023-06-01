@@ -6,9 +6,10 @@ import { useDrag } from "react-use-gesture"
 export default function Component({ children }: any) {
   const router = useRouter()
   const pathname = usePathname()
+  const height = screen.height / 6
+  const width = screen.width / 6
   const bind = useDrag(({ movement: [x, y] }) => {
-    console.log(pathname)
-    if (x > 300) {
+    if (x > width) {
       router.push(
         pathname == "/"
           ? "/contacts"
@@ -18,7 +19,7 @@ export default function Component({ children }: any) {
           ? "/contacts"
           : "/contacts"
       )
-    } else if (x < -300) {
+    } else if (x < width * -1) {
       router.push(
         pathname == "/"
           ? "/about"
@@ -28,7 +29,7 @@ export default function Component({ children }: any) {
           ? "/about"
           : "/about"
       )
-    } else if (y < -300) {
+    } else if (y < height * -1) {
       router.push(
         pathname == "/"
           ? "/works"
@@ -38,7 +39,7 @@ export default function Component({ children }: any) {
           ? "/works"
           : "/works"
       )
-    } else if (y > 300) {
+    } else if (y > height) {
       router.push(
         pathname == "/"
           ? "/articles"
@@ -48,11 +49,14 @@ export default function Component({ children }: any) {
           ? "/articles"
           : "/articles"
       )
-    } 
+    }
   })
 
   return (
-    <div {...bind()} className="h-[100vh] w-[100vw] flex justify-center items-center font-mono text-3xl">
+    <div
+      {...bind()}
+      className="h-[100vh] w-[100vw] flex justify-center items-center font-mono text-3xl"
+    >
       {children}
     </div>
   )
