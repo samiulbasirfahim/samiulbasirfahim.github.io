@@ -6,8 +6,8 @@ import { useDrag } from "react-use-gesture"
 export default function Component({ children }: any) {
   const router = useRouter()
   const pathname = usePathname()
-  const height = screen.height / 6
-  const width = screen.width / 6
+  const height = window.screen.height / 8
+  const width = window.screen.width / 8
   const bind = useDrag(({ movement: [x, y] }) => {
     if (x > width) {
       router.push(
@@ -55,7 +55,7 @@ export default function Component({ children }: any) {
   return (
     <div
       {...bind()}
-      className="h-[100vh] w-[100vw] flex justify-center items-center font-mono text-3xl"
+      className="h-[100vh] w-[100vw] flex justify-center items-center font-mono text-3xl cursor-grab"
     >
       {children}
     </div>
