@@ -5,8 +5,6 @@ import HackText from "@/components/HackText"
 import { useSearchParams } from "next/navigation"
 import { animated, useSpring } from "react-spring"
 
-
-
 export default function App() {
   const prev_page: string = useSearchParams().get("prev_page") as string
   let springs: any = useSpring({
@@ -22,7 +20,7 @@ export default function App() {
 
   return (
     <Component>
-      <animated.div style={{ ...springs }}>
+      <animated.div style={{ ...springs }} className="app">
         <HackText text={"FAHIM"} />
       </animated.div>
 
