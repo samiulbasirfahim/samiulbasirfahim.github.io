@@ -12,7 +12,7 @@ export default function Works() {
   return (
     <Component>
       <animated.div style={{ ...springs }}>
-      <HackText text="Works page" />
+        <HackText text="Works page" />
       </animated.div>
     </Component>
   )

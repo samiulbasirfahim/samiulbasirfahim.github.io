@@ -4,9 +4,19 @@ import { usePathname, useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { useDrag } from "react-use-gesture"
 
+
 export default function Component({ children }: any) {
   const router = useRouter()
   const pathname = usePathname()
+  
+  function router_push (path: string) {
+    if (pathname === "/") {
+      router.push(path)
+    } else {
+      router.push(`${path}?prev_page=${pathname.split("/")[1]}`)
+    }
+  }
+
 
   let height = 0;
   let width = 0;
@@ -16,7 +26,7 @@ export default function Component({ children }: any) {
   }, [])
   const bind = useDrag(({ movement: [x, y] }) => {
     if (x > width) {
-      router.push(
+      router_push(
         pathname == "/"
           ? "/contacts"
           : pathname == "/about"
@@ -26,7 +36,7 @@ export default function Component({ children }: any) {
           : "/contacts"
       )
     } else if (x < width * -1) {
-      router.push(
+      router_push(
         pathname == "/"
           ? "/about"
           : pathname == "/contacts"
@@ -36,7 +46,7 @@ export default function Component({ children }: any) {
           : "/about"
       )
     } else if (y < height * -1) {
-      router.push(
+      router_push(
         pathname == "/"
           ? "/works"
           : pathname == "/articles"
@@ -46,7 +56,7 @@ export default function Component({ children }: any) {
           : "/works"
       )
     } else if (y > height) {
-      router.push(
+      router_push(
         pathname == "/"
           ? "/articles"
           : pathname == "/works"

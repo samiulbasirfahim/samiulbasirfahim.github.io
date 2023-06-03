@@ -13,7 +13,7 @@ export default function Contact() {
   return (
     <Component>
       <animated.div style={{ ...springs }}>
-      <HackText text="Contact page" />
+        <HackText text="Contact page" />
       </animated.div>
     </Component>
   )
