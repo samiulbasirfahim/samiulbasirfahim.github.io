@@ -1,0 +1,6 @@
+#hackText {
+    font-size: 54px;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
+}

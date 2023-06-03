@@ -23,7 +23,6 @@ export default function App() {
       <animated.div style={{ ...springs }} className="app">
         <HackText text={"FAHIM"} />
       </animated.div>
-
     </Component>
   )
 }

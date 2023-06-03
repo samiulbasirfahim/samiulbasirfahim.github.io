@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./hackText.css";
 
 export default function HackText({ text: inputText }: {text:string}) {
   const mainText = inputText.toUpperCase()
@@ -30,8 +31,8 @@ export default function HackText({ text: inputText }: {text:string}) {
     }, 30)
   }
   return (
-    <h1 onMouseEnter={action} onTouchStart={action}>
+    <h2 id="hackText" date-text={text} onMouseEnter={action} onTouchStart={action}>
       {text}
-    </h1>
+    </h2>
   )
 }
