@@ -67,7 +67,8 @@ export default function Component({ children }: any) {
       )
     }
   })
-
+  // background: rgb(29, 39, 60);
+  // background: linear - gradient(90deg, rgba(29, 39, 60, 1) 11 %, rgba(29, 25, 57, 1) 46 %, rgba(0, 0, 0, 1) 95 %);
   return (
     <div
       {...bind()}
