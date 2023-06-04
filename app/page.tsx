@@ -4,6 +4,7 @@ import Component from "../components/component"
 import HackText from "@/components/HackText"
 import { useSearchParams } from "next/navigation"
 import { animated, useSpring } from "react-spring"
+import GuideText from "@/components/GuideText"
 
 export default function App() {
   const prev_page: string = useSearchParams().get("prev_page") as string
@@ -22,6 +23,14 @@ export default function App() {
     <Component>
       <animated.div style={{ ...springs }} className="app">
         <HackText text={"FAHIM"} />
+        <GuideText
+          guideText={[
+            "Swipe left for Contacts!",
+            "Swipe right for About!",
+            "Swipe up for Works!",
+            "Swipe down for Articles!",
+          ]}
+        />
       </animated.div>
     </Component>
   )
