@@ -8,7 +8,7 @@ import {
 
 export default function Contact() {
   return (
-    <div className="fixed bottom-0 left-10 flex flex-col items-center gap-4 z-20 transform-gpu">
+    <div className="fixed bottom-0 left-10 flex flex-col items-center gap-4 z-20">
       <a
         className="cursor-pointer"
         href="https://github.com/samiulbasirfahim"
