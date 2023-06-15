@@ -3,13 +3,13 @@
 import { usePathname, useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { useDrag } from "react-use-gesture"
-
+import Contact from "./contact"
 
 export default function Component({ children }: any) {
   const router = useRouter()
   const pathname = usePathname()
-  
-  function router_push (path: string) {
+
+  function router_push(path: string) {
     if (pathname === "/") {
       router.push(path)
     } else {
@@ -17,10 +17,9 @@ export default function Component({ children }: any) {
     }
   }
 
-
-  let height = 0;
-  let width = 0;
-  useEffect(()=> {
+  let height = 0
+  let width = 0
+  useEffect(() => {
     height = window.screen.height / 8
     width = window.screen.width / 8
   }, [])
@@ -67,13 +66,12 @@ export default function Component({ children }: any) {
       )
     }
   })
-  // background: rgb(29, 39, 60);
-  // background: linear - gradient(90deg, rgba(29, 39, 60, 1) 11 %, rgba(29, 25, 57, 1) 46 %, rgba(0, 0, 0, 1) 95 %);
   return (
     <div
       {...bind()}
-      className="h-[100vh] w-[100vw] flex justify-center items-center font-mono text-3xl cursor-grab"
+      className="h-[100vh] w-[100vw] flex justify-center items-center font-mono text-3xl"
     >
+      <Contact />
       {children}
     </div>
   )
