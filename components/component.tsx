@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { useDrag } from "react-use-gesture"
 import Contact from "./contact"
+import Cursor from "./cursor"
 
 export default function Component({ children }: any) {
   const router = useRouter()
@@ -69,9 +70,10 @@ export default function Component({ children }: any) {
   return (
     <div
       {...bind()}
-      className="h-[100vh] w-[100vw] flex justify-center items-center font-mono text-3xl"
+      className="h-[100vh] w-[100vw] flex justify-center items-center font-mono text-3xl overflow-hidden"
     >
       <Contact />
+      <Cursor />
       {children}
     </div>
   )

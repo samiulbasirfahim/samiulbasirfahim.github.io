@@ -1,0 +1,46 @@
+body {
+    cursor: none;
+}
+
+#cursor {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    margin: -20px 0 0 -20px;
+    mix-blend-mode: difference;
+    transition-duration: 0.4s;
+    transition-property: visibility, opacity;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+#cursor:before,
+#cursor:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 50%;
+}
+
+#cursor:before {
+    height: 8px;
+    width: 8px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#cursor:after {
+    height: 60px;
+    width: 60px;
+    border: 2px solid rgba(121, 206, 218, 0.858);
+    transition-duration: 0.4s;
+    transition-property: border-color, background, transform;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
